@@ -5,16 +5,19 @@ def voorbeeld_re(string):
     print(string)
     #print(match_stopcodon.)
     #print(match_stopcodon.start())
-    match_startcodon = re.search("ATG[ATGC]*TAA", string)
+    match_startcodon = re.search("ATG", string)
+    for match in re.finditer("ATG", string):
+        print(match.start())
+
     #match_stopcodon = re.search("TAA", string)
 
     #print(match_startcodon.start())
     #print(match_stopcodon.end())
-    print(string[match_startcodon.start():match_startcodon.end()])
+    print(match_startcodon.start())
 
 
 def main():
-    string = "AAATTATCCATGCCAAATTTTAAATATTAA"
+    string = "AATGAATTATCCATGCCAAATTTTAAATATTAA"
     voorbeeld_re(string)
 
 
